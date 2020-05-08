@@ -17,9 +17,9 @@ speech.sh is simple collection of few bash commands and logic to generate voice 
 ## Post work.
 After testing correct annoucement, it's time to run script every hour. This can be achived using simple crontab.
 Here are the quick helpers :
-'''
+```
 $crontab -e  [ then ]
-'''
+```
 
 append the following entry :
 
@@ -43,20 +43,20 @@ Refer: https://alvinalexander.com/linux/unix-linux-crontab-every-minute-hour-day
 
 ### Extras 
 - Its good idea to set main volume in bearable value,this can be done using this : (Already implemented in script)
-'''
+```
 $amixer -q -M sset PCM 50%
-'''
+```
 
 - Playing file via command using VLC player. I prefer VLC because 99% it's available on my devices. 
-'''
+```
 $cvlc --play-and-exit --quiet google_tts.mp3 			
-'''		 
+```		 
 
 - Actual Talking Clock file 
 We can genreate mp3 file by building following string and calling using curl. Its self-explanatory.
-'''
+```
 curl 'https://translate.google.com/translate_tts?ie=UTF-8&q=Hello%20Everyone&tl=en&client=tw-ob' -H 'Referer: http://translate.google.com/' -H 'User-Agent: stagefright/1.2 (Linux;Android 5.0)' > google_tts.mp3
-'''
+```
 
 Refer : https://stackoverflow.com/questions/9893175/google-text-to-speech-api
 
